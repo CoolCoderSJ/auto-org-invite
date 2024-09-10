@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Github Organization Invite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <% if !username %>
+    <form method='post' action='/'>
+        <h3>Send an invitation for: </h3>
+        <h1><%= orgName %></h1>
+        <p>Enter your username: </p>
+        <input type='text' name='username' placeholder="Username" required>
+        <button type='submit'>Send Invite</button>
+    </form>
+    <% else %>
+    <% if success %>
+    <h1>Invite sent!</h1>
+    <p>Check your email for the invite link.</p>
+    <% else %>
+    <h1>Failed to send invite</h1>
+    <p>Make sure you are a member of the organization and have not already been invited.</p>
+    <% end %>
+    <% end %>
+</body>
+</html>
